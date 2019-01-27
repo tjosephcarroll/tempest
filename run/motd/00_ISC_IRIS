@@ -1,0 +1,18 @@
+#!/bin/bash
+ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+echo "Welcome to InterSystems IRIS Community Edition."
+echo ""
+echo "This instance is currently running InterSystems IRIS Community "
+echo "in a Docker container named 'try-iris'."
+echo ""
+echo "You will need the following information to connect your IDE or" 
+echo "application to your 'try-iris' container."
+echo "IP: $ip"
+echo "Superserver Port: 51773"
+echo "Web Server Port: 52773"
+echo "JDBC connection string: jdbc:IRIS://$ip:51773/USER"
+echo "Management Portal URL: http://$ip:52773/csp/sys/UtilHome.csp"
+echo ""
+echo "Please start by resetting your password: \$iris password"
+echo ""
+echo "For help: \$iris help"

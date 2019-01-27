@@ -1,0 +1,18 @@
+#!/bin/bash
+#move the compose file to /etc/ISC
+main(){
+    sudo mkdir /opt/ISC
+    sudo mv /var/lib/cloud/scripts/per-boot/tempest/run/compose/* /opt/ISC/
+    sudo chmod 775 /opt/ISC
+    sudo chmod 775 /opt/ISC/*
+
+    #move license key too
+    #sudo mkdir /opt/ISC/key
+    #sudo mv /var/lib/cloud/scripts/per-boot/license.key /opt/ISC/key/license.key
+    #sudo chmod 775 /opt/ISC/key/*
+
+    #symlink to the executable
+    sudo ln -s /opt/ISC/iris /bin/iris
+}
+
+main

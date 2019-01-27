@@ -1,0 +1,9 @@
+#!/bin/bash
+#preloads an container image
+
+main(){
+    #pull after on store
+    source /var/lib/cloud/scripts/per-boot/tempest/build/config/config.sh
+    sudo docker load -i /var/lib/cloud/scripts/per-boot/$KIT
+}
+main

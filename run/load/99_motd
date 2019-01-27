@@ -1,0 +1,30 @@
+#!/bin/bash
+#change the message of the day to reflect the content we want
+main(){
+    clean_motd
+    move_scripts
+    legal
+    update_motd
+}
+#get rid of the existing motd scripts
+clean_motd(){
+    sudo rm /etc/update-motd.d/*
+}
+#move our script(s) to the right location
+move_scripts(){
+   sudo mv /var/lib/cloud/scripts/per-boot/tempest/run/motd/00_ISC_IRIS /etc/update-motd.d/
+}
+#overwrite the ubuntu legal text
+legal(){
+    sudo echo " " > /tmp/legal
+    sudo cp -f /tmp/legal /etc/legal
+    sudo rm /tmp/legal
+}
+
+#run the motd scripts and redirect output to the right location.
+update_motd(){
+    sudo run-parts /etc/update-motd.d/ | sudo tee /etc/motd
+    sudo echo "*  *    * * *   root    run-parts /etc/update-motd.d/ | sudo tee /etc/motd" | sudo tee --append /etc/crontab
+}
+
+main

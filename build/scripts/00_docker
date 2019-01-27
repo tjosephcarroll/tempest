@@ -1,0 +1,53 @@
+#!/bin/bash
+#installs and configures docker
+#Docker?
+main (){
+    which docker
+    if [ $? -eq 0 ]
+    then
+        docker --version | grep "Docker version"
+        if [ $? -eq 0 ]
+        then
+            echo "docker exists"
+        else
+            echo "install docker"
+            install_docker
+            add_user
+            start_docker
+        fi
+    else
+        echo "install docker"
+        install_docker
+        add_user
+        start_docker
+    fi
+}
+
+
+
+#Install docker
+install_docker() {
+    sudo apt update -y
+    sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+    sudo apt update -y
+    apt-cache policy docker-ce
+    sudo apt install docker-ce -y
+    sudo apt update -y
+}
+
+
+#start docker
+start_docker() {
+    sudo service docker start
+    sudo systemctl daemon-reload
+    sudo service docker restart
+}
+
+#add user 
+add_user() {
+    sudo usermod -aG docker ${USER}
+}
+
+main

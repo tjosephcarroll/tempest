@@ -1,0 +1,8 @@
+#!/bin/bash
+#patches linux packages.
+
+main(){
+    sudo sudo apt update -y
+    sudo sudo apt upgrade -y
+}
+main
