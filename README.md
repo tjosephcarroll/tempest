@@ -7,7 +7,7 @@ Instructions.
 2. Clone
 ```
 cd /var/lib/cloud/scripts/per-boot/
-sudo git clone --single-branch -b Community-Azure-2019.1.0 https://github.com/tjosephcarroll/tempest.git
+sudo git clone --single-branch -b master https://github.com/tjosephcarroll/tempest.git
 ```
 
 2. Build
