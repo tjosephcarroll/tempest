@@ -1,5 +1,6 @@
 #!/bin/bash
 #puts everything in the right place.
+#this is the thing that actually builds the VM Image
 main(){
     config
     source /var/lib/cloud/scripts/per-boot/tempest/build/config/config.sh

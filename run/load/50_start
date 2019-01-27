@@ -3,6 +3,6 @@
 main(){
     #replace the kitname in the docker-compose file
     sudo chmod 775 /var/lib/cloud/scripts/per-boot/tempest/build/config.sh
-    sudo docker-compose -f /opt/ISC/docker-compose.yml up --build --detach
+    sudo docker-compose -f /opt/tempest/docker-compose.yml up --build --detach
 }
 main

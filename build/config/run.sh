@@ -1,5 +1,6 @@
 #!/bin/bash
-#pulls git repo and cleans up key
+#pulls git repo containing the application code we'd like to run.
+#here is is just a simple container and docker-compose file
 main(){
     source /var/lib/cloud/scripts/per-boot/config.sh
     add_to_known_hosts

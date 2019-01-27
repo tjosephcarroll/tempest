@@ -1,5 +1,6 @@
 #!/bin/bash
 #installs and configures docker-compose
+#we're using this because our applicaiton is containerized
 main (){
     #docker-compose?
     docker-compose --version | grep "docker-compose version"

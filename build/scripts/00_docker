@@ -1,6 +1,6 @@
 #!/bin/bash
 #installs and configures docker
-#Docker?
+#We're doing this because our application is a container
 main (){
     which docker
     if [ $? -eq 0 ]

@@ -1,5 +1,6 @@
 #!/bin/bash
 #change the message of the day to reflect the content we want
+# that content can be changed/extended or removed
 main(){
     clean_motd
     move_scripts
