@@ -20,7 +20,7 @@ clone_repo(){
     sudo rm -rf /var/lib/cloud/scripts/per-boot/tempest
     
     #clone
-    sudo ssh-agent bash -c 'ssh-add /var/lib/cloud/scripts/per-boot/ssh.key; git clone --single-branch -b '"${branch}"' git@github.com:intersystems/tempest.git /var/lib/cloud/scripts/per-boot/'"${ranNum}"''
+    sudo ssh-agent bash -c 'ssh-add /var/lib/cloud/scripts/per-boot/ssh.key; git clone --single-branch -b '"${branch}"' git@github.com:tjosephcarroll/tempest.git /var/lib/cloud/scripts/per-boot/'"${ranNum}"''
     
     #move and clean
     sudo mkdir /var/lib/cloud/scripts/per-boot/tempest
